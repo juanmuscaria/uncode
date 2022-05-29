@@ -5,6 +5,7 @@ plugins {
     id("io.micronaut.application") version "3.3.2"
     id("nebula.ospackage") version "9.1.1"
     id("net.kyori.blossom") version "1.2.0"
+    id "com.github.hierynomus.license" version "0.16.1"
 }
 
 version = "1.0.0"
@@ -107,5 +108,12 @@ task buildGenericDistributions {
     dependsOn("distZip")
 }
 
-
 [buildDeb, buildRpm]*.dependsOn("nativeBuild")
+
+license {
+    header = file('GPL-3.0-header')
+    ext.year = '2022'
+    ext.name = 'juanmuscaria'
+    ext.email = 'juanmuscaria@gmail.com'
+    includes(["**/*.java"])
+}
