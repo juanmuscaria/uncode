@@ -23,6 +23,7 @@ import org.objectweb.asm.*;
  * Cleans annotation and attributes from a field.
  */
 public class FieldCleaner extends FieldVisitor {
+
     public FieldCleaner(FieldVisitor fieldVisitor) {
         super(Opcodes.ASM9, fieldVisitor);
     }

@@ -91,7 +91,7 @@ public class MethodCleaner extends MethodVisitor {
         } else if (type.getReturnType().equals(Type.VOID_TYPE)) { // Void return type
             // Return
             super.visitInsn(RETURN);
-        } else  {
+        } else {
             // Load null into the operand stack
             super.visitInsn(ACONST_NULL);
             // Return

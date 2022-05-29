@@ -29,6 +29,7 @@ import java.nio.file.Path;
 @Command(name = "uncode", description = "Removes all code and assets from a jar file, leaving only public symbols with no code.",
         mixinStandardHelpOptions = true, version = "%VERSION%")
 public class Uncode implements Runnable {
+
     private static final Logger logger
             = LoggerFactory.getLogger(Uncode.class);
 
@@ -59,7 +60,7 @@ public class Uncode implements Runnable {
             }
         } catch (IllegalArgumentException e) {
             logger.error(e.getLocalizedMessage());
-        }catch (Exception e) {
+        } catch (Exception e) {
             logger.error("A fatal error occurred while processing the jar file", e);
         }
     }

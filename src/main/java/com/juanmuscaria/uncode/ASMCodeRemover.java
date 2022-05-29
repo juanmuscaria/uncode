@@ -29,9 +29,13 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.zip.*;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipException;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipOutputStream;
 
 public class ASMCodeRemover {
+
     private static final Logger logger
             = LoggerFactory.getLogger(ASMCodeRemover.class);
 
@@ -89,7 +93,7 @@ public class ASMCodeRemover {
      * @throws IllegalArgumentException if the class is not readable by the current ASM version,
      * if the class is synthetic or if the class is not public
      */
-    public static byte[] processClass(byte[] classBytes) throws IllegalArgumentException{
+    public static byte[] processClass(byte[] classBytes) throws IllegalArgumentException {
         var classReader = new ClassReader(classBytes);
         var classWriter = new ClassWriter(classReader, ClassWriter.COMPUTE_MAXS);
         classReader.accept(new ClassCleaner(classWriter), 0);

@@ -8,9 +8,9 @@
             <pattern>%highlight%msg%n</pattern>
         </encoder>
     </appender>
-    <logger name="com.juanmuscaria.uncode" level="info" />
+    <logger name="com.juanmuscaria.uncode" level="info"/>
 
     <root level="ERROR">
-        <appender-ref ref="STDOUT" />
+        <appender-ref ref="STDOUT"/>
     </root>
 </configuration>
