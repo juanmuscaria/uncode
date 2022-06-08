@@ -24,6 +24,7 @@ dependencies {
     implementation("io.micronaut.picocli:micronaut-picocli")
     implementation("jakarta.annotation:jakarta.annotation-api")
     implementation("org.ow2.asm:asm-commons:9.3")
+    implementation("org.fusesource.jansi:jansi:2.4.0")
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("ch.qos.logback:logback-classic")
     compileOnly("org.graalvm.nativeimage:svm")
