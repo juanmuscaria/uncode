@@ -87,7 +87,7 @@ task buildAllDistributions(type: Copy) {
         dependsOn("buildDeb")
         dependsOn("buildRpm")
         from("${buildDir}/native/nativeCompile/uncode")
-    } else if (os.isMac()) {
+    } else if (os.isMacOsX()) {
         //TODO: Untested
         dependsOn("nativeBuild")
         from("${buildDir}/native/nativeCompile/uncode")
